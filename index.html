@@ -7,46 +7,64 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>⚡ Missão Harry Potter ⚡</h1>
-            <h2>O Chapéu Seletor e as Poções</h2>
-        </header>
 
-        <div class="chapeu-box">
-            <div class="chapeu">🎩</div>
-            <p id="frase-chapeu">"Hmm... difícil... muito difícil..."</p>
-            <button onclick="sortearCasa()">Sortear minha Casa!</button>
-            <h2 id="resultado-casa"></h2>
+    <div class="topo">
+        <h1>⚡ HOGWARTS - AVALIAÇÃO MÁGICA ⚡</h1>
+        <p>Decifre a magia do Código Mestre LH</p>
+    </div>
+
+    <div class="container">
+
+        <!-- PARTE 1: CHAPÉU SELETOR -->
+        <div class="card-principal">
+            <h2>🎩 O Chapéu Seletor</h2>
+            <p>Escolha sua casa mágica para começar o ritual</p>
+            
+            <div class="chapeu-area">
+                <div class="chapeu-icone">🎩</div>
+                <p id="frase-chapeu">Leais e justos!</p>
+                <button class="btn-vermelho" onclick="sortearCasa()">SORTEAR MINHA CASA!</button>
+                <h2 id="resultado-casa" class="casa-lufa">LUFA-LUFA!</h2>
+            </div>
+
+            <div class="botoes-casa">
+                <button class="btn-casa grif" onclick="escolherCasa('Grifinória')">🦁 Grifinória</button>
+                <button class="btn-casa sonse" onclick="escolherCasa('Sonserina')">🐍 Sonserina</button>
+                <button class="btn-casa corv" onclick="escolherCasa('Corvinal')">🦅 Corvinal</button>
+                <button class="btn-casa lufa" onclick="escolherCasa('Lufa-Lufa')">🦡 Lufa-Lufa</button>
+            </div>
         </div>
 
-        <section class="pocoes">
-            <h3>🧪 Poções Mágicas de Hogwarts 🧪</h3>
-            <div class="cards">
-                <div class="card grifinoria">
-                    <h4>Grifinória - Coragem</h4>
-                    <p>Poção Polissuco</p>
-                    <span>Para os corajosos</span>
+        <!-- PARTE 2: RITUAL E INVENTÁRIO LADO A LADO -->
+        <div class="duplo">
+            <!-- Ritual -->
+            <div class="card-principal">
+                <h2>🧪 Ritual de Poções</h2>
+                <label>Nome do Feitiço / Poção</label>
+                <input type="text" id="nomePocao" placeholder="Ex: Poção Polissuco">
+                
+                <label>Nível de Dificuldade</label>
+                <select id="nivel">
+                    <option>Fácil - Iniciante</option>
+                    <option>Médio - Avançado</option>
+                    <option>Difícil - Mestre</option>
+                </select>
+
+                <label>Avaliação da Magia</label>
+                <div class="estrelas">
+                    <span onclick="avaliar(1)">★</span>
+                    <span onclick="avaliar(2)">★</span>
+                    <span onclick="avaliar(3)">★</span>
+                    <span onclick="avaliar(4)">★</span>
+                    <span onclick="avaliar(5)">★</span>
                 </div>
-                <div class="card sonserina">
-                    <h4>Sonserina - Ambição</h4>
-                    <p>Felix Felicis</p>
-                    <span>Sorte líquida</span>
-                </div>
-                <div class="card corvinal">
-                    <h4>Corvinal - Sabedoria</h4>
-                    <p>Veritaserum</p>
-                    <span>Soro da Verdade</span>
-                </div>
-                <div class="card lufa">
-                    <h4>Lufa-Lufa - Lealdade</h4>
-                    <p>Essência de Ditamno</p>
-                    <span>Cura tudo</span>
-                </div>
+
+                <button class="btn-amarelo" onclick="registrarFeitico()">Registrar Avaliação</button>
             </div>
-        </section>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
+
+            <!-- Inventário -->
+            <div class="card-principal">
+                <h2>💜 Inventário de Poções</h2>
+                <div class="item-pocao">
+                    <span class="bolinha roxa"></span> <b>Poção do Amor</b><br
 
