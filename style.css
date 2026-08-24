@@ -1,8 +1,57 @@
-body { font-family: Arial; background: #eef2f7; padding: 20px; }
-h1 { text-align: center; color: #0b5ed7; }
-.container { background: white; padding: 20px; border-radius: 10px; max-width: 800px; margin: auto; box-shadow: 0 0 10px #ccc; }
-input, select, textarea, button { width: 100%; padding: 10px; margin: 8px 0; border-radius: 5px; border: 1px solid #ccc; }
-button { background: #0b5ed7; color: white; border: none; cursor: pointer; font-weight: bold; }
-button:hover { background: #0948a8; }
-table { width: 100%; margin-top: 15px; border-collapse: collapse; }
-th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    background: #0a0a0a url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Cinzel', serif;
+    color: #f0d27a;
+    text-align: center;
+}
+
+.container {
+    background: rgba(0,0,0,0.85);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+header h1 { font-size: 2.5em; margin-bottom: 0; text-shadow: 0 0 10px #f0d27a; }
+header h2 { font-weight: 400; color: #fff; }
+
+.chapeu-box {
+    background: rgba(255,255,255,0.1);
+    border: 2px solid #f0d27a;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 500px;
+    margin: 30px auto;
+}
+
+.chapeu { font-size: 80px; animation: balancar 2s infinite; }
+
+@keyframes balancar {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+}
+
+button {
+    background: #740001;
+    color: #f0d27a;
+    border: 1px solid #f0d27a;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-family: 'Cinzel', serif;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+button:hover { background: #ae0001; transform: scale(1.05); }
+
+#resultado-casa { margin-top: 20px; font-size: 2em; text-shadow: 0 0 15px white; }
+
+.cards { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px; }
+.card { width: 200px; background: rgba(255,255,255,0.95); color: #000; border-radius: 15px; padding: 15px; border-bottom: 8px solid; }
+.grifinoria { border-color: #740001; }
+.sonserina { border-color: #1a472a; }
+.corvinal { border-color: #0e1a40; }
+.lufa { border-color: #ecb939; }
