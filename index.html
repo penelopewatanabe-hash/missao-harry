@@ -1,70 +1,100 @@
-<!DOCTYPE html>
+-<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Missão Harry - Poções</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hogwarts - Avaliação Mágica</title>
+<style>
+body{margin:0;background:#0f0f1a;color:white;font-family:Arial;padding:10px}
+.topo{text-align:center;border:2px solid #d4af37;margin:10px;border-radius:15px;padding:10px;background:#1a1a2e}
+.card{background:#1e1e32;border-radius:15px;padding:20px;margin:15px 0;border:1px solid #444}
+.chapeu{text-align:center;border:2px solid #d4af37;border-radius:15px;padding:20px}
+.btn-vermelho{background:#c0392b;color:white;padding:12px 20px;border-radius:10px;border:none;font-weight:bold;cursor:pointer;width:100%;max-width:300px}
+.btn-amarelo{background:#f1c40f;color:black;padding:14px;width:100%;border-radius:10px;border:none;font-weight:bold;cursor:pointer;font-size:16px;margin-top:10px}
+input,select{width:100%;padding:12px;border-radius:8px;border:2px solid #d4af37;background:#2a2a45;color:white;margin:8px 0 15px 0;box-sizing:border-box;font-size:16px}
+.estrelas{font-size:40px;color:#555;cursor:pointer;text-align:center;letter-spacing:10px}
+.estrelas span.ativa{color:#f1c40f}
+.casa{font-size:32px;font-weight:bold;color:#f0c040;text-align:center;margin:10px 0}
+.botoes-casa{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:15px}
+.btn-casa{padding:10px 15px;border-radius:20px;border:none;color:white;cursor:pointer;font-weight:bold}
+.grif{background:#740001}.sonse{background:#1a472a}.corv{background:#0e1a40}.lufa{background:#ecb939;color:black}
+.pocao{background:#2a2a45;padding:12px;border-radius:10px;margin:8px 0}
+</style>
 </head>
 <body>
+<div class="topo"><h1>⚡ HOGWARTS - AVALIAÇÃO MÁGICA ⚡</h1><p>Decifre a magia do Código Mestre LH</p></div>
 
-    <div class="topo">
-        <h1>⚡ HOGWARTS - AVALIAÇÃO MÁGICA ⚡</h1>
-        <p>Decifre a magia do Código Mestre LH</p>
-    </div>
+<div class="card">
+<div class="chapeu">
+<div style="font-size:60px">🎩</div>
+<p id="frase" style="color:#d4af37;font-weight:bold">Clique para começar o ritual!</p>
+<button class="btn-vermelho" onclick="sortear()">SORTEAR MINHA CASA!</button>
+<div id="resultado" class="casa">LUFA-LUFA!</div>
+<div class="botoes-casa">
+<button class="btn-casa grif" onclick="escolher('Grifinória','Coragem e bravura!')">🦁 Grifinória</button>
+<button class="btn-casa sonse" onclick="escolher('Sonserina','Astúcia e ambição!')">🐍 Sonserina</button>
+<button class="btn-casa corv" onclick="escolher('Corvinal','Inteligência!')">🦅 Corvinal</button>
+<button class="btn-casa lufa" onclick="escolher('Lufa-Lufa','Leais e justos!')">🦡 Lufa-Lufa</button>
+</div>
+</div>
+</div>
 
-    <div class="container">
+<div class="card">
+<h2>🧪 Ritual de Poções</h2>
+<label>Nome do Feitiço / Poção</label>
+<input type="text" id="nome" placeholder="Ex: Polissuco">
+<label>Nível de Dificuldade</label>
+<select id="nivel"><option>Fácil - Iniciante</option><option>Médio - Avançado</option><option>Difícil - Mestre</option></select>
+<label>Avaliação da Magia</label>
+<div class="estrelas" id="estrelas">
+<span onclick="avaliar(1)">★</span><span onclick="avaliar(2)">★</span><span onclick="avaliar(3)">★</span><span onclick="avaliar(4)">★</span><span onclick="avaliar(5)">★</span>
+</div>
+<button class="btn-amarelo" onclick="registrar()">Registrar Avaliação</button>
+</div>
 
-        <!-- PARTE 1: CHAPÉU SELETOR -->
-        <div class="card-principal">
-            <h2>🎩 O Chapéu Seletor</h2>
-            <p>Escolha sua casa mágica para começar o ritual</p>
-            
-            <div class="chapeu-area">
-                <div class="chapeu-icone">🎩</div>
-                <p id="frase-chapeu">Leais e justos!</p>
-                <button class="btn-vermelho" onclick="sortearCasa()">SORTEAR MINHA CASA!</button>
-                <h2 id="resultado-casa" class="casa-lufa">LUFA-LUFA!</h2>
-            </div>
+<div class="card">
+<h2>💜 Inventário de Poções</h2>
+<div class="pocao">💜 <b>Poção do Amor</b> - Elixir</div>
+<div class="pocao">💚 <b>Polissuco</b> - Transformação</div>
+<div class="pocao">❤️ <b>Felix Felicis</b> - Sorte líquida</div>
+<div class="pocao">💙 <b>Veritaserum</b> - Só a verdade</div>
+<div id="lista" style="margin-top:20px"></div>
+</div>
 
-            <div class="botoes-casa">
-                <button class="btn-casa grif" onclick="escolherCasa('Grifinória')">🦁 Grifinória</button>
-                <button class="btn-casa sonse" onclick="escolherCasa('Sonserina')">🐍 Sonserina</button>
-                <button class="btn-casa corv" onclick="escolherCasa('Corvinal')">🦅 Corvinal</button>
-                <button class="btn-casa lufa" onclick="escolherCasa('Lufa-Lufa')">🦡 Lufa-Lufa</button>
-            </div>
-        </div>
-
-        <!-- PARTE 2: RITUAL E INVENTÁRIO LADO A LADO -->
-        <div class="duplo">
-            <!-- Ritual -->
-            <div class="card-principal">
-                <h2>🧪 Ritual de Poções</h2>
-                <label>Nome do Feitiço / Poção</label>
-                <input type="text" id="nomePocao" placeholder="Ex: Poção Polissuco">
-                
-                <label>Nível de Dificuldade</label>
-                <select id="nivel">
-                    <option>Fácil - Iniciante</option>
-                    <option>Médio - Avançado</option>
-                    <option>Difícil - Mestre</option>
-                </select>
-
-                <label>Avaliação da Magia</label>
-                <div class="estrelas">
-                    <span onclick="avaliar(1)">★</span>
-                    <span onclick="avaliar(2)">★</span>
-                    <span onclick="avaliar(3)">★</span>
-                    <span onclick="avaliar(4)">★</span>
-                    <span onclick="avaliar(5)">★</span>
-                </div>
-
-                <button class="btn-amarelo" onclick="registrarFeitico()">Registrar Avaliação</button>
-            </div>
-
-            <!-- Inventário -->
-            <div class="card-principal">
-                <h2>💜 Inventário de Poções</h2>
-                <div class="item-pocao">
-                    <span class="bolinha roxa"></span> <b>Poção do Amor</b><br
-
+<script>
+let estrelasSel=0;
+let casaAtual="Lufa-Lufa";
+function sortear(){
+const casas=["Grifinória","Sonserina","Corvinal","Lufa-Lufa"];
+const frases={"Grifinória":"Onde habitam os corajosos!","Sonserina":"Astúcia e ambição!","Corvinal":"Inteligência e sabedoria!","Lufa-Lufa":"Leais e justos!"};
+let s=casas[Math.floor(Math.random()*4)];
+casaAtual=s;
+document.getElementById("resultado").innerText=s.toUpperCase()+"!";
+document.getElementById("frase").innerText=frases[s];
+}
+function escolher(nome,frase){
+casaAtual=nome;
+document.getElementById("resultado").innerText=nome.toUpperCase()+"!";
+document.getElementById("frase").innerText=frase;
+}
+function avaliar(n){
+estrelasSel=n;
+let spans=document.querySelectorAll("#estrelas span");
+spans.forEach((e,i)=>{if(i<n)e.classList.add("ativa");else e.classList.remove("ativa")});
+}
+function registrar(){
+let nome=document.getElementById("nome").value;
+let nivel=document.getElementById("nivel").value;
+if(nome==""||estrelasSel==0){alert("Escreva o nome da poção e clique nas estrelinhas!");return;}
+let lista=document.getElementById("lista");
+let div=document.createElement("div");
+div.className="pocao";
+div.innerHTML="✨ <b>"+nome+"</b> - "+nivel+" - "+"★".repeat(estrelasSel)+" - "+casaAtual;
+lista.appendChild(div);
+document.getElementById("nome").value="";
+avaliar(0);
+}
+</script>
+</body>
+</html>
+-+
