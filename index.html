@@ -2,35 +2,51 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Sistema de Avaliação</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missão Harry - Poções</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Sistema de Avaliação de Disciplina - IF</h1>
     <div class="container">
-        <h2>RF001 - Avaliar Disciplina</h2>
-        <form id="formAvaliacao">
-            <input type="text" id="disciplina" placeholder="Nome da disciplina" required>
-            <select id="nota">
-                <option value="5">5 - Excelente</option>
-                <option value="4">4 - Bom</option>
-                <option value="3">3 - Regular</option>
-                <option value="2">2 - Ruim</option>
-                <option value="1">1 - Péssimo</option>
-            </select>
-            <textarea id="comentario" placeholder="Comentário sobre a disciplina"></textarea>
-            <button type="submit">Registrar Avaliação</button>
-        </form>
+        <header>
+            <h1>⚡ Missão Harry Potter ⚡</h1>
+            <h2>O Chapéu Seletor e as Poções</h2>
+        </header>
 
-        <h2>RF002 - Auto Avaliação</h2>
-        <form id="formAuto">
-            <textarea id="autoAv" placeholder="Minha auto-avaliação"></textarea>
-            <button type="submit">Salvar</button>
-        </form>
+        <div class="chapeu-box">
+            <div class="chapeu">🎩</div>
+            <p id="frase-chapeu">"Hmm... difícil... muito difícil..."</p>
+            <button onclick="sortearCasa()">Sortear minha Casa!</button>
+            <h2 id="resultado-casa"></h2>
+        </div>
 
-        <h2>Lista de Avaliações</h2>
-        <table id="tabela"></table>
+        <section class="pocoes">
+            <h3>🧪 Poções Mágicas de Hogwarts 🧪</h3>
+            <div class="cards">
+                <div class="card grifinoria">
+                    <h4>Grifinória - Coragem</h4>
+                    <p>Poção Polissuco</p>
+                    <span>Para os corajosos</span>
+                </div>
+                <div class="card sonserina">
+                    <h4>Sonserina - Ambição</h4>
+                    <p>Felix Felicis</p>
+                    <span>Sorte líquida</span>
+                </div>
+                <div class="card corvinal">
+                    <h4>Corvinal - Sabedoria</h4>
+                    <p>Veritaserum</p>
+                    <span>Soro da Verdade</span>
+                </div>
+                <div class="card lufa">
+                    <h4>Lufa-Lufa - Lealdade</h4>
+                    <p>Essência de Ditamno</p>
+                    <span>Cura tudo</span>
+                </div>
+            </div>
+        </section>
     </div>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
+
