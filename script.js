@@ -1,30 +1,14 @@
-let avaliacoes = JSON.parse(localStorage.getItem('avaliacoes') || '[]');
-const tabela = document.getElementById('tabela');
-const form = document.getElementById('formAvaliacao');
-
-function mostrar() {
-    tabela.innerHTML = '<tr><th>Disciplina</th><th>Nota</th><th>Comentário</th></tr>';
-    avaliacoes.forEach(a => {
-        tabela.innerHTML += `<tr><td>${a.disciplina}</td><td>${a.nota}</td><td>${a.comentario}</td></tr>`;
-    });
+function sortearCasa() {
+    const casas = [
+        { nome: "🦁 GRIFINÓRIA!", cor: "#ae0001", frase: "Onde habitam os corajosos!" },
+        { nome: "🐍 SONSERINA!", cor: "#1a472a", frase: "Aqueles astutos que usam de qualquer meio!" },
+        { nome: "🦅 CORVINAL!", cor: "#0e1a40", frase: "Inteligência e sabedoria!" },
+        { nome: "🦡 LUFA-LUFA!", cor: "#ecb939", frase: "Leais e justos!" }
+    ];
+    
+    const sorteada = casas[Math.floor(Math.random() * casas.length)];
+    document.getElementById("resultado-casa").innerText = sorteada.nome;
+    document.getElementById("resultado-casa").style.color = sorteada.cor;
+    document.getElementById("frase-chapeu").innerText = sorteada.frase;
 }
-mostrar();
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const nova = {
-        disciplina: document.getElementById('disciplina').value,
-        nota: document.getElementById('nota').value,
-        comentario: document.getElementById('comentario').value
-    };
-    avaliacoes.push(nova);
-    localStorage.setItem('avaliacoes', JSON.stringify(avaliacoes));
-    mostrar();
-    alert('Avaliação registrada! RF001 OK');
-    form.reset();
-});
-
-document.getElementById('formAuto').addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('Auto-avaliação salva! RF002 OK');
-});
