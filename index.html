@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Avaliação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Sistema de Avaliação de Disciplina - IF</h1>
+    <div class="container">
+        <h2>RF001 - Avaliar Disciplina</h2>
+        <form id="formAvaliacao">
+            <input type="text" id="disciplina" placeholder="Nome da disciplina" required>
+            <select id="nota">
+                <option value="5">5 - Excelente</option>
+                <option value="4">4 - Bom</option>
+                <option value="3">3 - Regular</option>
+                <option value="2">2 - Ruim</option>
+                <option value="1">1 - Péssimo</option>
+            </select>
+            <textarea id="comentario" placeholder="Comentário sobre a disciplina"></textarea>
+            <button type="submit">Registrar Avaliação</button>
+        </form>
+
+        <h2>RF002 - Auto Avaliação</h2>
+        <form id="formAuto">
+            <textarea id="autoAv" placeholder="Minha auto-avaliação"></textarea>
+            <button type="submit">Salvar</button>
+        </form>
+
+        <h2>Lista de Avaliações</h2>
+        <table id="tabela"></table>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
