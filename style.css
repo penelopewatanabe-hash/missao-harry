@@ -1,57 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
-
+/* CORES E FUNDO */
 body {
     margin: 0;
-    background: #0a0a0a url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80') no-repeat center center fixed;
-    background-size: cover;
-    font-family: 'Cinzel', serif;
-    color: #f0d27a;
+    background: #0f0f1a;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.topo {
     text-align: center;
+    border: 2px solid #d4af37;
+    margin: 20px;
+    border-radius: 15px;
+    padding: 10px;
+    background: #1a1a2e;
 }
 
-.container {
-    background: rgba(0,0,0,0.85);
-    min-height: 100vh;
+.topo h1 { color: #d4af37; font-size: 22px; }
+.topo p { color: #ccc; }
+
+.container { max-width: 900px; margin: auto; padding: 10px; }
+
+.card-principal {
+    background: #1e1e32;
+    border-radius: 15px;
     padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #333;
 }
 
-header h1 { font-size: 2.5em; margin-bottom: 0; text-shadow: 0 0 10px #f0d27a; }
-header h2 { font-weight: 400; color: #fff; }
+/* CHAPÉU */
+.chapeu-area { text-align: center; border: 2px solid #d4af37; border-radius: 15px; padding: 20px; margin: 15px 0; }
+.chapeu-icone { font-size: 60px; }
+#frase-chapeu { color: #d4af37; font-weight: bold; }
+.casa-lufa { color: #f0c040; text-shadow: 0 0 10px #f0c040; }
 
-.chapeu-box {
-    background: rgba(255,255,255,0.1);
-    border: 2px solid #f0d27a;
-    border-radius: 20px;
-    padding: 30px;
-    max-width: 500px;
-    margin: 30px auto;
-}
+.botoes-casa { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.btn-casa { padding: 8px 12px; border-radius: 20px; border: none; color: white; cursor: pointer; }
+.grif { background: #740001; }.sonse { background: #1a472a; }.corv { background: #0e1a40; }.lufa { background: #ecb939; color: black; }
 
-.chapeu { font-size: 80px; animation: balancar 2s infinite; }
+/* BOTÕES */
+.btn-vermelho { background: #c0392b; color: white; padding: 10px 20px; border-radius: 10px; border: none; cursor: pointer; font-weight: bold; }
+.btn-amarelo { background: #f1c40f; color: black; padding: 12px; width: 100%; border-radius: 10px; border: none; font-weight: bold; margin-top: 15px; cursor: pointer; }
 
-@keyframes balancar {
-    0%, 100% { transform: rotate(-5deg); }
-    50% { transform: rotate(5deg); }
-}
+/* INPUTS */
+input, select { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #d4af37; background: #2a2a45; color: white; margin: 8px 0 15px 0; box-sizing: border-box; }
 
-button {
-    background: #740001;
-    color: #f0d27a;
-    border: 1px solid #f0d27a;
-    padding: 12px 25px;
-    font-size: 16px;
-    font-family: 'Cinzel', serif;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-top: 15px;
-}
-button:hover { background: #ae0001; transform: scale(1.05); }
+/* ESTRELAS */
+.estrelas { font-size: 30px; color: #555; cursor: pointer; text-align: center; }
+.estrelas span.ativa { color: #f1c40f; }
 
-#resultado-casa { margin-top: 20px; font-size: 2em; text-shadow: 0 0 15px white; }
+/* DUPLO */
+.duplo { display: flex; gap: 20px; flex-wrap: wrap; }
+.duplo.card-principal { flex: 1; min-width: 280px; }
 
-.cards { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px; }
-.card { width: 200px; background: rgba(255,255,255,0.95); color: #000; border-radius: 15px; padding: 15px; border-bottom: 8px solid; }
-.grifinoria { border-color: #740001; }
-.sonserina { border-color: #1a472a; }
-.corvinal { border-color: #0e1a40; }
-.lufa { border-color: #ecb939; }
+/* INVENTÁRIO */
+.item-pocao { background: #2a2a45; padding: 10px; border-radius: 10px; margin: 8px 0; }
+.bolinha { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+.roxa { background: #9b59b6; }.verde { background: #2ecc71; }.vermelha { background: #e74c3c; }.azul { background: #3498db; }
+.pocao-destaque { background: #d4af37; color: black; padding: 10px; border-radius: 10px; margin-top: 15px; text-align: center; }
+
